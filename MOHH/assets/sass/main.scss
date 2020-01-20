@@ -1,0 +1,33 @@
+//Bootstrap File
+@import "bootstrap";
+
+
+// Partial Files
+@import "partials/fonts/font";
+@import "partials/global/global";
+@import "partials/navigation/navigation";
+@import "partials/heroBanner/banner";
+@import "partials/healthcareBrief/healthcareBrief";
+@import "partials/extend/extend";
+@import "partials/buttons/button";
+@import "partials/suitableScholarship/suitable_scholarship";
+@import "partials/owlCarousel/owl.carousel";
+@import "partials/owlCarousel/owl.theme.default";
+@import "partials/ScholarshipCarousel/scholarship";
+@import "partials/HealthcareScholarship/healthcare-scholarship";
+@import "partials/happeningCarousel/happeningCarousel";
+@import "partials/socialMedia/social-media";
+@import "partials/footer/footer";
+@import "partials/forms/forms";
+@import "partials/innerPage-header/innerHeader";
+@import "partials/secondaryBanner/secondary-InnerBanner";
+@import "partials/testimonial/testimonial";
+@import "partials/two_column/two-column";
+@import "partials/course-accordian/course-accordian";
+@import "partials/select/select";
+@import "partials/select-scholarship/select-scholarship";
+@import "partials/faq/faq";
+
+html {
+	font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
