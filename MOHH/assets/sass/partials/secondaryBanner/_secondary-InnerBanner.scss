@@ -1,0 +1,110 @@
+.secondary-InnerBanner {
+	@extend %bottom_space;
+	.secondary-InnerBanner-Item {
+		@include flexbox;
+		@include respond-below(sm) {
+			flex-direction: column-reverse;
+		}
+		justify-content: center;
+	    align-items: center;
+	    text-align: center;
+	    flex-wrap: wrap;
+	    @include respond-above(sm) {
+	    	background-color: map-get($color, lightGray);
+	    }
+	    @include space(margin, left, $zero_size);
+		&__text {
+			@include respond-below(sm) {
+		    	background-color: map-get($color, lightGray);
+		    }
+			@include space(padding, top, $size_15);
+			@include space(padding, bottom, $size_15);
+			@include space(padding, left, $size_100);
+			@include space(padding, right, $size_100);
+			@include respond-below(lg) {
+				@include space(padding, left, $size_30);
+				@include space(padding, right, $size_15);
+			}
+			@include respond-below(sm) {
+				@include space(padding, right, $size_30);
+				@include space(padding, left, $size_15);
+				@include space(padding, bottom, $size_35);
+			}
+
+			h2 {
+				@include font-size($xxxx_large); 
+				@include line-height($xxs_large);
+				@include respond-below(sm) {
+					@include font-size($xx_large);
+					@include line-height($xxxx_large);
+					@include space(padding, top, $size_10);
+				}
+			}
+			p {
+				@include space(margin, bottom, $size_45);
+				@include respond-below(md) {
+					@include space(margin, bottom, $size_20);
+				}
+			}
+
+			.more_btn {
+				@include respond-above(md) {
+					@include space(margin, bottom, $size_30);
+				}
+			}
+		}
+		&__image {
+			@include respond-below(sm) {
+		    	@include space(padding, left, $zero_size);
+		    }
+		}
+	}
+
+	#secondary-InnerBanner {
+		.owl-nav {
+			
+			.owl-prev, .owl-next {
+				outline: $zero_size; 
+				background-color: transparent !important;
+				span {
+					color: transparent;
+				    display: block;
+			        height: $size_40;
+			        width: $size_30;
+				}
+			}
+
+			.owl-prev {
+				@include respond-above(md) {
+					@include absolute_position(45%, auto, auto, 52%);
+				}
+				@include absolute_position(45%, auto, auto, 0);
+				span {
+					background: url('../img/img_sprite.png') -137px -713px;
+					//background: url('../img/img_sprite.png') -137px -1091px;
+				}
+				
+			}
+			.owl-next {
+				@include absolute_position(45%, 0, auto, auto); 
+				span {    
+					background: url('../img/img_sprite.png') -137px -610px;
+					//background: url('../img/img_sprite.png') -137px -1219px;
+				}
+			}
+		}
+	}
+
+	.owl-dots {
+		.owl-dot {
+			outline: $zero_size;
+		} 
+		@include respond-above(md) {
+			@include absolute_position(auto, auto, 15px, 23%);
+		}
+		@include respond-below(md) {
+			@include space(margin, top, $size_25);
+		}
+	}
+	
+}

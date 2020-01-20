@@ -1,0 +1,13 @@
+.container-fluid {
+	@include space(padding, all, $zero_size);
+}
+.container {
+	max-width: 117rem;
+	width: $full_size;
+}
+
+body {
+	line-height: 1;
+	background-color: map-get($color, white);
+	color: map-get($color, gray);
+}

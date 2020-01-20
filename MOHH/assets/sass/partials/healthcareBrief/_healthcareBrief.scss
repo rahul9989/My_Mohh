@@ -1,0 +1,48 @@
+.healthcareBrief {
+	@extend %bottom_space;
+
+	.suitable_scholarship {
+		@include absolute_position(-9.4rem, 0, auto, auto);
+	
+		@include respond-below(lg) {
+			@include absolute_position(-11.8rem, $size_15, auto, auto);
+		}
+
+		@include respond-below(md) {
+			position: relative;
+			top: $zero_size;
+			right: $zero_size;
+		}
+	}
+
+	.healthcareBriefArticle {
+		@include respond-below(md) {
+			@include space(margin, bottom, $size_30);
+		}
+		
+		@include respond-below(sm) {
+			height: auto !important;
+		}
+	}
+
+	img {
+		@include space(margin, bottom, $size_15)
+	}
+
+	p {
+		@include space(padding, bottom, $size_60);
+
+		@include respond-below(sm) {
+			@include space(padding, bottom, $size_30);
+		}
+	}
+
+	.more_btn {
+		@include absolute_position(auto, auto, 0, $size_15);
+
+		@include respond-below(sm) {
+			position: relative;
+			left: $zero_size;
+		}
+	}
+}

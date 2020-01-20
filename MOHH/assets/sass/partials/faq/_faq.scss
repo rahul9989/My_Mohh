@@ -1,0 +1,57 @@
+.faq-section {
+	@extend %bottom_space;
+	min-height: calc(100vh - 35.1rem);
+	h1 {
+		color: map-get($color, darkGray);
+	}
+	.container {
+		& > h4 {
+			@include space(margin, bottom, $size_15);
+		}
+	}
+	
+	.panel-group {
+		@include space(margin, bottom, $zero_size);
+
+		.panel-default {
+			@include border-radius($zero_size);
+			@include space(margin, bottom, $size_25);
+			&:last-child {
+				@include space(margin, bottom, $zero_size);
+			}
+			@include border(1px, solid, map-get($color, dullGray));
+			.panel-heading {
+				background: map-get($color, lightGray);
+				@include border-radius($zero_size);
+				@include space(padding, all, $zero_size);
+				.panel-title {
+					a {
+						display: block;
+						color: map-get($color, darkGray) !important;
+						@include font-size($normal);
+						@include line-height($xx_large);
+						font-family: $FuturaStdBook !important;
+						@include space(padding, all, $size_20);
+
+						.glyphicon {
+							float: right;
+							top: 3px;
+							color: lighten(map-get($color, black), 40%);
+						}
+
+						&.collapsed {
+							.glyphicon-minus {
+								&:before {
+									content: "\002b";
+								}
+							}
+						}
+					}
+				}
+			}
+			.panel-body {
+				@include space(padding, all, $size_20);
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+.scholarship_section {
+	@extend %bottom_space;
+	position: relative;
+	#scholarshipCarousel {
+		@include space(margin, top, $size_20);
+
+		.owl-nav {
+			@include absolute_position(-$size_90, 0, auto, auto);
+			@media (max-width: 630px) {
+				@include absolute_position(-$size_110, 0, auto, auto);
+			}
+
+			.owl-prev, .owl-next {
+				@extend %owl_prev_next;
+			}
+
+			.owl-prev {
+				@include space(margin, right, $size_20);
+			}
+		}
+
+		.owl-dots {
+			display: none;
+		}
+	}
+
+	.scholarshipCarousel__item {
+		position: relative;
+		.scholarshipCarousel-heading {
+			@include font-size($large);
+			@include line-height($xx_large);
+			color: map-get($color, blue);
+			@include space(padding, bottom, $size_05);
+		}
+		img {
+			@include space(margin, bottom, $size_30);
+		}
+		p.scholarshipCarousel_brief {
+			@include space(padding, bottom, $size_60);
+		}
+		p {
+			strong {
+				color: map-get($color, black);
+			}
+			
+		}
+		.more_btn {
+			@include absolute_position(auto, auto, 0, 0);
+		}
+		.compare_btn {
+			@include absolute_position(auto, 0, 0, auto);
+		}
+	}
+}

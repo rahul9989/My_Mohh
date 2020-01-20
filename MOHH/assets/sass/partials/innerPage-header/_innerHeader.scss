@@ -1,0 +1,48 @@
+.inner-header {
+	@include space(padding, top, $size_110);
+	@include respond-below(sm) {
+		@include space(padding, top, $size_80);
+		@include space(margin, bottom, $size_50);
+	}
+	@include respond-below(xs) {
+		@include space(padding, top, $size_70);
+	}
+	@include space(margin, bottom, $size_90);
+	background-size: cover;
+
+	.container {
+		@include flexbox;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	h2 {
+		width: $full_size;
+		color: map-get($color, white) !important;
+		@include font-size($xxs_large);
+		@include line-height(42);
+		@include space(padding, top, $size_25);
+		@include space(padding, left, $size_70);
+		background: url('../img/img_sprite.png') no-repeat -127px -881px;
+
+		@include respond-below(sm) {
+			@include font-size($xxx_large);
+			@include line-height(32);
+			@include space(padding, top, $size_20);
+			background: url('../img/img_sprite.png') no-repeat -127px -887px;
+		}
+
+		&.compare-courses {
+			background: url('../img/img_sprite.png') no-repeat -127px -1059px;
+			@include respond-below(sm) {
+				background: url('../img/img_sprite.png') no-repeat -127px -1065px;
+			}
+		}
+	}
+
+	ol {
+		&.breadcrumb {
+			width: $full_size;
+		}
+	}
+}

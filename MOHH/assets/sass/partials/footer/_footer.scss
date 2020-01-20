@@ -1,0 +1,46 @@
+footer {
+	background: url('../img/footer-bg.png') no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: map-get($color, white);
+	@include space(padding, top, $size_25);
+	@include space(padding, bottom, $size_15);
+
+	@include respond-below(sm) {
+		text-align: center;
+		@include space(padding, top, $size_10);
+		@include space(padding, bottom, $size_10);
+		background-image: none;
+		background-color: map-get($color, blue);
+	}
+
+	.text-right {
+		@include respond-below(sm) {
+			text-align: center;
+		}
+	}
+
+	ul {
+		li {
+			display: inline-block;
+			line-height: normal;
+			a {
+				color: map-get($color, white);
+				&:hover, &:focus {
+					color: map-get($color, white);
+				}
+			}
+			&:after {
+				content: '|';
+				@include font-size($small);
+				@include space(margin, left, $size_10);
+				@include space(margin, right, 0.7rem);
+			}
+			&:last-child {
+				&:after {
+					content: none;
+				}
+			}
+		}
+	}
+} 

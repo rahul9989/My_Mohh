@@ -1,0 +1,166 @@
+.accordian-section {
+	@extend %bottom_space;
+
+	.compare-heading {
+		@include respond-above(sm) {
+			@include flexbox;
+			.compare-heading__title {
+				min-width: 23.5rem;
+			}
+		}
+		&__title {
+			background-color: map-get($color, blue);
+			color: map-get($color, white);
+			font-family: $FuturaBook;
+			@include font-size($large);
+			font-family: $FuturaBook;
+			@include space(padding, all, $size_20);
+		}
+
+		&__text {
+			width: $full_size;
+			background: map-get($color, lightGray);
+			text-align: center;
+			.row {
+				@include space(margin, all, $zero_size);
+				@include respond-above(sm) {
+					display: flex;
+				}
+			}
+			[class*='col-'] {
+				@include space(padding, top, $size_20);
+				@include space(padding, bottom, $size_20);
+				@include space(padding, left, $size_10);
+				@include space(padding, right, $size_10);
+				border-right: 1px solid map-get($color, dullGray);
+				&:last-child {
+					border-right: $zero_size;
+				}
+			}
+		}
+		@include respond-below(sm) {
+			display: none;
+		}
+	}
+
+	.panel-group {
+		@include space(margin, bottom, $zero_size);
+		.panel {
+			@include border-radius($zero_size);
+			@include border($zero_size);
+			border-top: 1px solid map-get($color, dullGray);
+			@include respond-below(sm) {
+				border-top: 1px solid darken(map-get($color, blue), 5%);
+			}
+			& + .panel {
+				@include space(margin, top, $zero_size); 
+			}
+		}
+		.panel-default {
+			background: map-get($color, lightGray);
+			@include respond-above(sm) {
+				@include flexbox;
+				.panel-heading {
+					min-width: 23.5rem;
+				}
+			}
+			.panel-heading {
+				background-color: map-get($color, blue);
+				color: map-get($color, white);
+				font-family: $FuturaBook;
+				@include space(padding, all, $zero_size);
+				@include border-radius($zero_size);
+				position: relative;
+				.panel-title {
+					a {
+						@include font-size($large);
+						color: map-get($color, white);
+						font-family: $FuturaBook;
+						display: block;
+						@include space(padding, all, $size_20);
+						@include space(padding, right, $size_25);
+						@include respond-below(md) {
+							@include space(padding, all, $size_15);
+						}
+						background: url(../img/img_sprite.png) no-repeat 65px -817px;
+
+						&.collapsed {
+							background: url(../img/img_sprite.png) no-repeat 65px -1331px;
+						}
+					}
+				}
+				&:before {
+					@include respond-above(sm) {
+						content: '';
+						@include absolute_position(-1px, auto, auto, $zero_size);
+						min-width: 23.5rem;
+						border-top: 1px solid darken(map-get($color, blue), 5%);
+					}
+				}
+			}
+			.panel-collapse {
+				width: $full_size;
+				.panel-body {
+					@include space(padding, all, $zero_size);
+					.row {
+						@include space(margin, all, $zero_size);
+						@include respond-above(sm) {
+							display: flex;
+						}
+					}
+					[class*="col-"] {
+						@include space(padding, all, $size_20);
+						@include respond-above(sm) {
+							border-right: 1px solid map-get($color, dullGray);
+						}
+						@include respond-below(md) {
+							@include space(padding, all, $size_15);
+						}
+						&:last-child {
+							border-right: $zero_size;
+						}
+					}
+					
+					border: $zero_size;
+					@include font-size($small);
+					ul {
+						@include space(padding, left, $size_20);
+						list-style-type: disc;
+						li {
+							@include font-size($small);
+						}
+					}
+
+					strong {
+						color: map-get($color, black);
+					}
+
+					p {
+						@include space(padding, bottom, $size_30);
+						@include respond-below(sm) {
+							@include space(padding, bottom, $size_20);
+						}
+					}
+
+					.row {
+						.col-sm-4 {
+							@include respond-below(sm) {
+								&:before {
+									content: attr(data-h4)"";
+									color: map-get($color, darkGray);
+									@include font-size($large);
+									@include line-height($xxx_large);
+									font-family: $FuturaStdBook;
+									display: block;
+									@include space(padding, bottom, $size_10);
+								}
+							}
+							
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

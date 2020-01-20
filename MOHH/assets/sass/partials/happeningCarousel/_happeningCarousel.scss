@@ -1,0 +1,65 @@
+.whats-happening {
+	text-align: center;
+	@extend %bottom_space;
+	color: map-get($color, lightBlack);
+	.container {
+		&>p {
+			@include font-size(17);
+		}
+	}
+	#happeningCarousel {
+		@include space(margin, top, $size_40);
+
+		.happeningCarousel__item {
+			color: map-get($color, lightBlack);
+			background-color: map-get($color, lightGray);
+			@include space(padding, top, $size_50);
+			@include space(padding, bottom, $size_50);
+			@include space(padding, left, $size_30);
+			@include space(padding, right, $size_30);
+			position: relative;
+
+			.happeningCarousel-heading {
+				@include font-size($large);
+				@include line-height($xx_large);
+				color: map-get($color, blue);
+				@include space(padding, bottom, $size_05);
+				font-family: $FuturaStdBook;
+			}
+
+			.happeningCarousel-date {
+				color: map-get($color, pink);
+				@include space(margin, bottom, $size_05);
+			}
+
+			.happeningCarousel-number {
+				background-color: map-get($color, blue);
+				color: map-get($color, white);
+				@include font-size($xxxx_large);
+				height: $size_60;
+				width: $size_60;
+				text-align: center;
+				margin: 0 auto;
+				@include border-radius(50px);
+				@include flexbox;
+				align-items: center;
+    			justify-content: center;
+    			@include space(margin, bottom, $size_10);
+			}
+		}
+
+		.owl-dots {
+			.owl-dot {
+				outline: $zero_size; 
+			}
+			@include space(margin, top, $size_40);
+			@include respond-below(sm) {
+				@include space(margin, top, $size_20);
+			}
+		}
+
+		.owl-nav {
+			display: none;
+		}
+	}
+}

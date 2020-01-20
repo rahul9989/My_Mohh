@@ -1,0 +1,36 @@
+.scholarship_listing {
+	@include flexbox;
+	flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.scholarshipCarousel__item {
+		width: 31.5rem;
+		@include respond-below(md) {
+			width: 48%;
+		}
+		@include respond-below(xs) {
+			width: $full_size;
+		}
+		@include space(margin, bottom, $size_50);
+		@include respond-below(sm) {
+			@include space(margin, bottom, $size_30);
+		}
+
+		&:first-child {
+			@include space(margin, left, $zero_size);
+		}
+
+		img {
+			width: $full_size;
+		}
+	}
+}
+
+.scholarship_showMore {
+	text-align: center;
+	@include space(margin, top, $size_30);
+	@include respond-below(sm) {
+		@include space(margin, top, $size_10);
+	}
+}

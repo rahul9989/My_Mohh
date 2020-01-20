@@ -1,0 +1,53 @@
+.heroBanner {
+	
+	figure {
+		position: relative;
+
+		figcaption {
+			@include absolute_position(auto, 0, 8.5%, 0);
+			@include respond-between(md, lg) {
+				@include absolute_position(auto, 0, 15%, 0); 
+			}
+			@include respond-below(md) {
+				@include absolute_position(auto, 0, 5%, 0);
+			}
+			margin: 0 auto;
+			max-width: 117rem;
+			width: $full_size;
+			@include space(padding, left, $size_15);
+			@include space(padding, right, $size_15);
+			background: transparent;
+			color: map-get($color, white);
+			text-align: center;
+
+			.heroBanner_heading, p {
+				background: transparent;
+			}
+
+			.heroBanner_heading {
+				text-transform: uppercase;
+				@include space(margin, bottom, $size_05);
+			}
+
+			p {
+				@include font_size($normal);
+				@include line_height($x_large);
+				font-family: $FuturaBook;
+
+				@include respond-below(sm) {
+					@include font-size($small);
+					@include line-height($large);
+				}
+			}
+		}
+
+		img {
+			width: $full_size; 
+		}
+	}
+	
+	@include space(margin, bottom, $size_35);
+	@include respond-below(sm) {
+		@include space(margin, bottom, $size_25);
+	}
+}

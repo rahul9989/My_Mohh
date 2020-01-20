@@ -1,0 +1,21 @@
+.compair-block {
+	background-color: map-get($color, lightGray);
+	@include space(padding, top, $size_25);
+	@include space(padding, bottom, $size_25);
+	@include space(padding, left, $size_25);
+	max-width: 19rem;
+	@include absolute_position($size_50, 0, auto, auto);
+	z-index: 1;
+
+	.scholarshipCarousel-heading {
+		@include font-size($large);
+		@include line-height($xx_large);
+		color: map-get($color, white);
+		background-color: map-get($color, blue);
+		@include space(padding, bottom, $size_15);
+		@include space(padding, top, $size_15);
+		@include space(padding, left, $size_10);
+		@include space(padding, right, $size_15);
+		@include space(margin, bottom, $size_20);
+	}
+}

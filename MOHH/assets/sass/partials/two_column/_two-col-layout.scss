@@ -1,0 +1,16 @@
+.two-col-layout {
+	@extend %bottom_space;
+	.mailing-block {
+		@include respond-above(lg) {
+			@include space(margin, left, $size_40);
+		}
+	}
+	p {
+		@include space(padding, bottom, $size_30);
+	}
+	.more_btn {
+		@include respond-below(sm) {
+			@include space(margin, bottom, $size_30);
+		}
+	}
+}

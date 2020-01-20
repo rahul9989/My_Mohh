@@ -1,0 +1,59 @@
+.custom-checkbox {
+    @include absolute_position(auto, 0, 0, auto);
+
+    &__label {
+        display: block;
+        position: relative;
+        @include space(padding, left, $size_25);
+        cursor: pointer;
+        @include border(1px, solid, map-get($color, pink));
+        color: map-get($color, pink);
+        @include border-radius(3px);
+        @include space(padding, top, $size_05);
+        @include space(padding, bottom, $size_05);
+        @include space(padding, left, $size_40);
+        @include space(padding, right, $size_20);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        input {
+            @include absolute_position;
+            opacity: $zero_size;
+            cursor: pointer;
+            height: $zero_size;
+            width: $zero_size;
+
+            &:checked {
+                & ~ .custom-checkbox__label--checkmark {
+                    &:after {
+                        display: block;
+                    }
+                } 
+            }
+        }
+
+        &--checkmark {
+            @include absolute_position($size_10, auto, auto, 1.7rem);
+            height: 1.3rem;
+            width: 1.3rem;
+            background-color: trasnparent;
+            @include border(1px, solid, map-get($color, pink));
+
+            &:after {
+                content: "";
+                @include absolute_position(0.1rem, auto, auto, 0.3rem);
+                display: none;
+                width: 0.4rem;
+                height: 0.8rem;
+                border: solid black;
+                border-width: 0 1px 1px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    } 
+
+}

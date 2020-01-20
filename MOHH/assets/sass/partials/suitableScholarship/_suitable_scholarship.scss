@@ -1,0 +1,35 @@
+.suitable_scholarship {
+	
+	header {
+		h2 {
+			color: map-get($color, white) !important;
+			background-color: map-get($color, blue);
+			@include space(padding, top, $size_20);
+			@include space(padding, bottom, $size_15);
+			@include space(padding, left, $size_10);
+			@include space(padding, right, $size_10);
+			@include font_size(19);
+			@include line_height(24);
+		}
+	}
+	&__body {
+		@include space(padding, left, $size_15);
+		@include space(padding, right, $size_10);
+		@include space(padding, bottom, $size_20);
+	    box-shadow: 0px 5px 15px #888888;
+
+		ul {
+			li {
+				@include space(padding, top, $size_20);
+				@include space(padding, left, $size_20);
+				background: url('../img/img_sprite.png') no-repeat -146px -296px;
+
+				a {
+					@include font_size(16);
+					@include line_height(30);
+					color: map-get($color, darkGray);
+				}
+			}
+		}
+	}
+}

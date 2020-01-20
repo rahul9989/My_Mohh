@@ -1,0 +1,76 @@
+.testimonial_slider {
+	@extend %bottom_space;
+	.testimonial_slider-Item {
+		@include flexbox;
+		justify-content: center;
+	    align-items: center;
+	    flex-wrap: wrap;
+
+	    &__text {
+	    	@include respond-below(sm) {
+	    		text-align: center;
+	    	}
+	    	h3 {
+	    		font-style: italic;
+	    		@include space(padding, bottom, $size_40);
+	    		@include respond-below(sm) {
+	    			@include space(padding, bottom, $size_20);
+	    			@include space(padding, top, $size_20);
+	    			@include font-size($x_large);
+					@include line-height($xxx_large);
+	    		}
+	    	}
+	    	p {
+	    		font-family: $FuturaStdBook;
+	    		@include font-size($x_large);
+				@include line-height($xxx_large);
+				color: map-get($color, lightBlack);
+
+				a {
+					display: block;
+					@include font-size($x_large);
+					@include line-height($xxx_large);
+					color: map-get($color, blue);
+				}
+	    	}
+	    }
+	}
+
+	#testimonial_slider {
+		.owl-nav {
+			
+			.owl-prev, .owl-next {
+				outline: $zero_size; 
+				span {
+					color: transparent;
+				    display: block;
+			        height: $size_40;
+			        width: $size_30;
+				}
+			}
+			.owl-prev {
+				@media (min-width: 1270px) {
+					@include absolute_position(45%, auto, auto, -5%);
+				}
+				@include absolute_position(45%, auto, auto, 0);
+				span {
+					background: url('../img/img_sprite.png') -137px -713px;
+				}
+				
+			}
+			.owl-next {
+				@media (min-width: 1270px) {
+					@include absolute_position(45%, -5%, auto, auto);
+				}
+				@include absolute_position(45%, 0, auto, auto);
+				background: url('../img/img_sprite.png') -128px -610px;
+			}
+		}
+
+		.owl-dots {
+			display: none;
+		}
+	}
+
+	
+}

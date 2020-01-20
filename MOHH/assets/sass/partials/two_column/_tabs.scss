@@ -1,0 +1,59 @@
+.tab-section {
+	&__tabs {
+		background-color: map-get($color, blue);
+
+		&--link {
+			display: inline-block;
+			color: map-get($color, white);
+			@include font-size($large);
+			@include space(padding, left, $size_25);
+			@include space(padding, right, $size_25);
+			@include space(padding, top, $size_15);
+			@include space(padding, bottom, $size_15);
+			@include respond-below(xs) {
+				@include space(padding, left, $size_10);
+				@include space(padding, right, $size_10);
+				line-height: initial;
+				@include font-size($normal);
+			}
+			cursor: pointer;
+
+			&.active {
+				background-color: darken(map-get($color, blue), 20%);
+			}
+
+		}
+	}
+	&__tab-content {
+		background: map-get($color, lightGray);
+		@include space(padding, all, $size_25);
+		@include space(margin, bottom, $size_35);
+		@include respond-below(sm) {
+			@include space(padding, all, $size_15);
+			
+		}
+		@include respond-below(md) {
+			@include space(margin, bottom, $size_25);
+		}
+		&--text {
+			display: none;
+			strong {
+				color: map-get($color, black);
+			}
+			p {
+				@include space(margin, bottom, $size_25);
+				@include respond-below(sm) {
+					@include space(margin, bottom, $size_15);
+				}
+			}
+			&.active {
+				display: inherit;
+			}
+		}
+	}
+	.more_btn {
+		@include respond-below(md) {
+			@include space(margin, bottom, $size_35);
+		}
+	}
+}

@@ -1,0 +1,232 @@
+.custom-navbar {
+
+	.container {
+		position: relative;
+	}
+
+	@include absolute-position(0, auto, auto, auto);
+	z-index: 1;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.1);
+	@include respond-below(md) {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+
+	.navbar-toggle {
+		border-color: map-get($color, white);
+		@include respond-below(sm) {
+			@include space(margin, top, 2.2rem);
+			@include space(margin, bottom, 2.2rem);
+		}
+		@include respond-below(xs) {
+			@include space(margin, top, 1.7rem);
+			@include space(margin, bottom, 1.7rem);
+		}
+		&:hover, &:focus {
+			background-color: transparent;
+		}
+		.icon-bar {
+			background-color: map-get($color, white);
+		}
+	}
+
+	.navbar-brand {
+		@include respond-below(md) {
+			width: 17.5rem;
+		}
+		@include respond-below(xs) {
+			width: 15rem;
+		}
+	}
+
+	.navbar-collapse {
+		@include respond-above(sm) {
+			display: flex !important; 
+	    	height: $size_110 !important;
+	    	@include space(padding, right, $zero_size);
+		}
+
+		.navbar-nav {
+			.open {
+				& > a {
+					background: transparent;
+					&:hover, &:focus {
+						color: map-get($color, white);
+					}
+					
+					&:after {
+						content: '';
+						@include absolute-position(auto, auto, auto, 42%);
+					    top: 91%;
+					    width: $zero_size;
+					    height: $zero_size;
+					    border-left: $size_10 solid transparent;
+					    border-right: $size_10 solid transparent;
+					    border-bottom: $size_10 solid map-get($color, white);
+					    clear: both;
+					}
+				}
+			}
+			@include respond-above(lg) {
+				@include space(margin, left, $size_125);
+			}
+			@include respond-between(md, lg) {
+				@include space(margin, left, $size_75);
+			}
+			@include respond-above(sm) {
+				@include flexbox;
+				justify-content: space-between;
+				width: $full_size;
+				height: $full_size;
+				align-items: center;
+			}
+			@include respond-below(sm) {
+				@include space(margin, top, $zero_size);
+				@include space(margin, bottom, $zero_size);
+				background-color: map-get($color, blue);
+			}
+			
+			&>li {
+				@include respond-above(sm) {
+					height: $full_size;
+				}
+				&.dropdown {
+					a {
+						.caret {
+							@include border(0);
+							width: $size_30;
+    						height: $size_15;
+							background: url('../img/img_sprite.png') no-repeat -139px -844px;
+						}
+					}
+					@include respond-above(sm) {
+						position: inherit;
+					}
+					&.open {
+						a {
+							.caret {
+								background: url('../img/img_sprite.png') no-repeat -139px -993px;
+							}
+						}
+					}
+				}
+				&>a {
+					color: map-get($color, white);
+					font-family: $FuturaBook;
+					@include font-size(17);
+					position: relative;
+					@include flexbox;
+					justify-content: space-between;
+					height: $full_size;
+					align-items: center;
+					@include space(padding, left, $size_15);
+					@include space(padding, right, $size_15);
+					@include respond-between(sm, md) {
+						@include space(padding, left, $size_10);
+						@include space(padding, right, $size_10);
+					}
+					@include respond-below(sm) {
+						border-bottom: 1px solid lighten(map-get($color, gray), 25%);
+					}
+				}
+				&:last-child {
+					&>a {
+						@include respond-above(lg) {
+							@include space(padding, right, $zero_size);
+						}
+					}
+				}
+				ul {
+					&.dropdown-menu {
+						&:after {
+							content: '';
+							width: calc(100% + 6rem);
+							height: calc(100% + 3rem);
+							@include absolute-position($zero_size, auto, auto, -$size_30);
+							z-index: -1;
+							background-color: rgba(255, 255, 255, 0.1);
+							@include respond-below(sm) {
+								content: none;
+							}
+						}
+
+						left: $size_45;
+						top: $full_size;
+						width: calc(100% - 9rem);
+						border: none;
+						@include border-radius(0);
+					    box-shadow: none;
+					    @include space(padding, top, $size_40);
+					    @include space(padding, bottom, $size_40);
+					    @include space(padding, left, $size_15);
+					    @include space(padding, right, $size_15);
+					    background-color: map-get($color, white);
+					    list-style-position: inside;
+
+					    @include respond-below(sm) {
+					    	position: initial;
+					    	width: $full_size;
+					    }
+
+					    li {
+					    	ul {
+					    		@include space(padding, bottom, $size_30);
+					    		list-style-position: inside;
+					    		li {
+					    			font-family: $OpenSansRegular;
+					    			background: url('../img/img_sprite.png') no-repeat -144px -392px;
+					    			@include space(padding, left, $size_20);
+
+					    			&:first-child {
+					    				background: none;
+					    				@include space(padding, left, $zero_size);
+					    			}
+
+					    			&.dropdown-header {
+					    				font-family: $FuturaBook;
+					    				color: map-get($color, blue);
+					    				@include font-size($x_large);
+					    				@include space(padding, all, $zero_size);
+					    				@include space(margin, bottom, $size_15);
+					    				white-space: inherit;
+					    			}
+
+					    			a {
+					    				@include font-size($small);
+					    				color: map-get($color, black);
+					    				@include line-height(36);
+					    			}
+					    		}
+					    	}
+					    }
+					}
+
+				}
+				&.single-dropdown {
+					position: relative;
+					ul {
+						&.dropdown-menu {
+							width: auto;
+							left: $zero_size;
+							@include space(padding, top, $size_20);
+					    	@include space(padding, bottom, $size_20);
+							&:after {
+								background-color: rgba(255, 255, 255, 0.5);
+							}
+						}
+						li {
+						    background: url(../img/img_sprite.png) no-repeat -144px -392px;
+							a {
+								@include space(padding, right, $size_10);
+								&:hover, &:focus {
+									background-color: transparent;
+								}
+							}
+						}
+					}
+					
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+%bottom_space {
+	@include space(padding, bottom, $size_90);
+	@include respond-below(sm) {
+		@include space(padding, bottom, $size_50);
+	}
+}
+
+%bottom_margin {
+	@include space(margin, bottom, $size_90);
+	@include respond-below(sm) {
+		@include space(margin, bottom, $size_50);
+	}
+}
+
+%owl_prev_next {
+	height: $size_20;
+	width: $size_20;
+	@include border-radius(2px);
+	@include border(1px, solid, map-get($color, pink));
+	background-color: lighten(map-get($color, pink), 30%);
+	outline: none;
+
+	span {
+		background-color: transparent;
+		color: map-get($color, pink);
+		@include font-size(26);
+	    top: -$size_05;
+	    position: relative;
+	}	
+}

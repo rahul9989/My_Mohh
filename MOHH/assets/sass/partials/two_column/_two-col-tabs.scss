@@ -1,0 +1,17 @@
+.two-col-tabs {
+	@extend %bottom_space;
+	.suitable_scholarship {
+		@include respond-above(lg) {
+			@include space(margin, left, $size_40);
+		}
+		header {
+			h2 {
+				@include space(padding, left, $size_15);
+			}
+		}
+		&__body {
+			box-shadow: none;
+			background: map-get($color, lightGray);
+		}
+	}
+}

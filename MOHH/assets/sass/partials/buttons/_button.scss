@@ -1,0 +1,78 @@
+%custom-btn {
+	@include font-size(16);
+	color: map-get($color, blue) !important;
+	@include border(1px, solid, map-get($color, blue));
+	@include border-radius(3px);
+	@include space(padding, top, $size_05);
+	@include space(padding, bottom, $size_05);
+	@include space(padding, left, $size_20);
+	@include space(padding, right, $size_20);
+	display: inline-block;
+	font-family: $SegoeUI;
+	transition: .5s;
+
+	&:hover {
+		background-color: map-get($color, blue);
+		color: map-get($color, white) !important;
+	}
+	&:focus {
+		color: map-get($color, blue) !important;
+		&:hover {
+			color: map-get($color, white) !important;
+		}
+	}
+}
+
+.more_btn {
+	@extend %custom-btn;
+}
+
+.compare_btn {
+	@extend %custom-btn;
+	color: map-get($color, pink);
+	@include border(1px, solid, map-get($color, pink));
+	&:hover {
+		background-color: map-get($color, pink);
+	}
+	&:focus {
+		color: map-get($color, pink);
+	}
+}
+
+.compare_all {
+	background-color: map-get($color, pink);
+	color: map-get($color, white) !important;
+}
+
+.add_btn {
+	background-color: map-get($color, pink);
+	color: map-get($color, white) !important;
+	display: block;
+    text-align: center;
+   	@include space(margin, bottom, $size_15);
+   	min-height: $size_50;
+   	@include flexbox;
+   	align-items: center;
+    justify-content: center;
+    &:focus {
+		color: map-get($color, white) !important;
+		//outline: none;
+	}
+}
+
+.join_btn {
+	@extend %custom-btn;
+	color: map-get($color, black) !important;
+	@include border(1px, solid, transparent);
+	background-color: map-get($color, yellow);
+	&:hover {
+		background-color: map-get($color, white);
+		color: map-get($color, black) !important;
+	}
+	&:focus {
+		color: map-get($color, black) !important;
+		&:hover {
+			color: map-get($color, black) !important;
+		}
+	}
+}

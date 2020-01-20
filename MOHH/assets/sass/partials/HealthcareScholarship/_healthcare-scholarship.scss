@@ -1,0 +1,84 @@
+.healthcare-scholarship {
+	@include space(padding, top, $size_65);
+	@include space(padding, bottom, $size_65);
+	@extend %bottom_margin;
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+	@include respond-below(sm) {
+		@include space(padding, bottom, $size_25);
+	}
+
+	#healthcare-carousel {
+		iframe {
+			border: $zero_size;
+			@include respond-below(sm) {
+				@include space(padding, bottom, $size_30);
+			}
+		}
+
+		h2, p {
+			color: map-get($color, white) !important;
+		}
+		.owl-nav {
+			@include absolute_position(auto, auto, 0, 60%);
+			@include respond-below(sm) {
+				@include absolute_position(-$size_45, 0, auto, auto);
+			}
+
+			.owl-prev, .owl-next {
+				@extend %owl_prev_next;
+				background-color: transparent;
+			}
+			.owl-prev {
+				@include space(margin, right, $size_20);
+			}
+		}
+
+		.owl-dots {
+			display: none;
+		}
+		
+		.healthcareSocial {
+			@include space(padding, top, $size_30);
+			@include space(padding, bottom, $size_50);
+			@include respond-below(sm) {
+				@include space(padding, bottom, $zero_size);
+			}
+			li {
+				display: inline-block;
+				@include space(padding, all, $size_05);
+				&:first-child {
+					@include space(padding, left, $zero_size);
+				}
+				a {
+					width: $size_25;
+					height: $size_20;
+					text-indent: -9999px;
+					display: block;
+				}
+
+			}
+			&__facebook {
+				a {
+					background: url('../img/img_sprite.png');
+					background-position: -36.4rem -52.4rem;
+				}
+				
+			}
+			&__twitter {
+				a {
+					background: url('../img/img_sprite.png');
+					background-position: -14rem -52.6rem;
+				}
+			}
+			&__googlePlus {
+				a {
+					background: url('../img/img_sprite.png');
+					background-position: -21.8rem -52.6rem;
+				}
+			}	
+		}
+		 
+	}
+}

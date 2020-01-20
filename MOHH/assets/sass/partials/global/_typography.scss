@@ -1,0 +1,61 @@
+h1 {
+	@include font-size($xs_large);
+	@include line-height($xxs_large);
+	font-family: $FuturaStdBook !important;
+	@include space(margin, bottom, $size_30);
+
+	@include respond-below(sm) {
+		@include font-size($xxx_large);
+		@include line-height($xxxx_large);
+		@include space(margin, bottom, $size_20);
+	}
+}
+
+h2 {
+	@include font-size($xxx_large);
+	@include line-height($xxxx_large);
+	color: map-get($color, blue) !important;
+	@include space(padding, bottom, $size_20);
+	font-family: $FuturaStdBook !important;
+	@include respond-below(sm) {
+		@include space(padding, bottom, $size_20);
+	}
+}
+
+h3 {
+	@include font-size($xxx_large);
+	@include line-height($xxxx_large);
+	color: map-get($color, lightBlack) !important;
+	@include space(padding, bottom, $size_20);
+	font-family: $FuturaStdBook !important;
+}
+
+h4 {
+	color: map-get($color, darkGray) !important;
+	@include font-size($large);
+	@include line-height($xxx_large);
+	font-family: $FuturaStdBook !important;
+}
+
+p {
+	@include font_size($small);
+	@include line_height($xxx_large);
+}
+
+a {
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+ul {
+	li {
+		@include font_size($normal);
+		@include line_height($xxxx_large);
+	}
+}

@@ -1,0 +1,60 @@
+.social-media {
+	text-align: center;
+	@include space(padding, top, $size_65);
+	@include space(padding, bottom, $size_65);
+	background-size: cover;
+    background-repeat: no-repeat;
+	@include respond-below(sm) {
+		@include space(padding, top, $size_35);
+		@include space(padding, bottom, $size_35);
+	}
+
+	#social_feedCarousel {
+		@include space(padding, top, $size_45);
+		@include space(padding, bottom, $size_65);
+		@include respond-below(sm) {
+			@include space(padding, top, $size_15);
+			@include space(padding, bottom, $size_35);
+		}
+
+		img {
+			@include space(padding, left, $size_35);
+			@include space(padding, right, $size_35);
+		}
+
+		.owl-nav {
+			
+			.owl-prev, .owl-next {
+				outline: $zero_size; 
+				span {
+					color: transparent;
+				    display: block;
+			        height: $size_40;
+			        width: $size_30;
+				}
+			}
+
+			.owl-prev {
+				@media (min-width: 1270px) {
+					@include absolute_position(45%, auto, auto, -5%);
+				}
+				@include absolute_position(45%, auto, auto, 0);
+				span {
+					background: url('../img/img_sprite.png') -137px -713px;
+				}
+				
+			}
+			.owl-next {
+				@media (min-width: 1270px) {
+					@include absolute_position(45%, -5%, auto, auto);
+				}
+				@include absolute_position(45%, 0, auto, auto);
+				background: url('../img/img_sprite.png') -128px -610px;
+			}
+		}
+
+		.owl-dots {
+			display: none;
+		}
+	}
+}

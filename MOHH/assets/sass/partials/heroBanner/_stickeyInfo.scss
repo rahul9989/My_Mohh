@@ -1,0 +1,29 @@
+.stickey-info {
+	position: fixed;
+	top: 40%;
+	z-index: 9;
+
+	&__list {
+		li {
+			a {
+				text-indent: -9999px;
+				width: $size_60;
+				height: $size_60;
+				display: block;
+			}
+		}
+
+		&--scrollTop {
+			background: url("../img/img_sprite.png") no-repeat -112px -20px;
+		}
+		&--scrollbottom {
+			background: url("../img/img_sprite.png") no-repeat -112px -80px;
+		}
+		&--googleMap {
+			background: url("../img/img_sprite.png") no-repeat -112px -140px;
+		}
+		&--share {
+			background: url("../img/img_sprite.png") no-repeat -112px -200px;
+		}
+	}
+}

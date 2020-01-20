@@ -1,0 +1,29 @@
+.select-scholarship {
+	background-color: darken(map-get($color, white), 2.9%);
+	@include space(padding, top, $size_20);
+	@include space(padding, bottom, $size_10);
+	@include space(margin, bottom, $size_90);
+	@include respond-below(sm) {
+		@include space(margin, bottom, $size_50);
+	}
+	label {
+		@include font-size(17);
+		color: map-get($color, blue);
+		font-family: $FuturaStdBook;
+		@include space(margin, bottom, $size_10);
+	}
+
+	.row {
+		@include respond-above(sm) {
+			@include flexbox;
+			align-items: flex-end;
+		}
+	}
+}
+
+.inner-header + .select-scholarship {
+	@include space(margin, top, -$size_90);
+	@include respond-below(sm) {
+		@include space(margin, top, -$size_50);
+	}
+}
